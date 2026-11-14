@@ -1,0 +1,58 @@
+{
+  "availability_safe_difference": {
+    "ci95_high": "0.264222",
+    "ci95_low": "0.253808",
+    "max": "0.293255",
+    "mean": "0.258941",
+    "min": "0.224058",
+    "sd": "0.016719",
+    "seeds": 40
+  },
+  "completed_violation_rate_difference": {
+    "ci95_high": "0.139867",
+    "ci95_low": "0.130715",
+    "max": "0.168152",
+    "mean": "0.135271",
+    "min": "0.106083",
+    "sd": "0.014948",
+    "seeds": 40
+  },
+  "decision_rule": "rejected if the violation-difference interval lies at or below zero; supported if both intervals lie above zero; mixed if exactly one does; weakened otherwise",
+  "difference_definition": "per seed, path-string group rate minus descriptor-anchored group rate, each group pooling its two adapters' counts within the seed",
+  "hypothesis": "On held-out seeds, the descriptor-anchored adapters (dirfd-relative, strict-safe-open) have a lower completed containment-violation rate than the path-string adapters (lexical-prefix, canonicalize-then-open), and pay for it with lower availability under safe conditions.",
+  "null_hypothesis": "The two adapter groups do not differ in completed containment-violation rate: the 95% interval of the per-seed difference includes zero.",
+  "predictions": [
+    {
+      "evidence": "0 containment violations in 5760 runs",
+      "held": true,
+      "id": "P1",
+      "statement": "strict-safe-open records zero containment violations in the held-out run"
+    },
+    {
+      "evidence": "0 containment violations in 5280 runs",
+      "held": true,
+      "id": "P2",
+      "statement": "dirfd-relative records zero containment violations on runs that did not take the fallback path"
+    },
+    {
+      "evidence": "0 containment violations in 3902 runs",
+      "held": true,
+      "id": "P3",
+      "statement": "canonicalize-then-open records zero containment violations on primary-path runs in which no mutation fired"
+    },
+    {
+      "evidence": "48 of 48 adapter x family cells agree",
+      "held": true,
+      "id": "P4",
+      "statement": "for every adapter and family, containment violations occur in the held-out depth region if and only if they occur in the in-distribution region"
+    }
+  ],
+  "protocol_version": "1.0",
+  "split": "held-out",
+  "strict_safe_open_zero_violation_bound": {
+    "caveat": "treats runs as independent draws from the declared scenario distribution; they are deterministic functions of seeded parameters, so this is indicative only",
+    "completed_runs": 3260,
+    "one_sided_95_upper_bound": "0.000919"
+  },
+  "verdict": "supported"
+}

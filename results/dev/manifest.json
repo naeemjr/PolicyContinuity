@@ -1,0 +1,108 @@
+{
+  "adapters": [
+    {
+      "contract_version": 2,
+      "fallback_rule": "not-applicable",
+      "name": "lexical-prefix",
+      "strategy": "normalise the joined path as text, check it is beneath the root, open it by path"
+    },
+    {
+      "contract_version": 2,
+      "fallback_rule": "legacy-when-enabled",
+      "name": "canonicalize-then-open",
+      "strategy": "realpath the joined path, check it is beneath the root, open the resolved path"
+    },
+    {
+      "contract_version": 1,
+      "fallback_rule": "legacy-when-enabled",
+      "name": "dirfd-relative",
+      "strategy": "openat each component from the root handle with O_NOFOLLOW; never follow a symlink"
+    },
+    {
+      "contract_version": 1,
+      "fallback_rule": "never",
+      "name": "strict-safe-open",
+      "strategy": "openat2(RESOLVE_BENEATH) from the root handle; report unsupported if unavailable"
+    }
+  ],
+  "auxiliary_twin_runs": 640,
+  "bootstrap_resamples": 10000,
+  "depth_held_out": [
+    5,
+    6
+  ],
+  "depth_in_distribution": [
+    1,
+    4
+  ],
+  "evaluated_runs": 7680,
+  "families": [
+    "nested-in-root",
+    "dotdot-normalization",
+    "symlink-in-root-target",
+    "symlink-outside-target",
+    "symlink-swap",
+    "parent-dir-rename",
+    "file-replacement",
+    "retry-after-failure",
+    "compat-fallback",
+    "primitive-unavailable",
+    "toctou-barrier",
+    "benign-control"
+  ],
+  "files": [
+    "dev/runs.csv",
+    "dev/per_seed.csv",
+    "dev/outcome_counts.csv",
+    "dev/summary.csv",
+    "dev/by_parameter.csv",
+    "tables/table_primary_metrics.md",
+    "tables/table1_preservation_by_family.md",
+    "tables/table2_violation_by_family.md",
+    "tables/table3_availability_vs_refusal.md",
+    "tables/table4_false_refusals.md",
+    "tables/table5_fallback_drift.md",
+    "tables/table6_outcome_matrix.md",
+    "tables/table_worst_case.md",
+    "tables/table_policy_comparison.md"
+  ],
+  "held_out_depth_instances_per_family": 4,
+  "instances_per_family": 8,
+  "outcomes": [
+    "preserved",
+    "containment_violation",
+    "safe_refusal",
+    "false_refusal",
+    "ordinary_failure",
+    "unsupported_safe",
+    "evaluator_inconclusive"
+  ],
+  "protocol_version": "1.0",
+  "retry_budget": 2,
+  "scenarios": 1920,
+  "seeds": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+  ],
+  "split": "development",
+  "tool": "policycontinuity",
+  "version": "0.2.0"
+}

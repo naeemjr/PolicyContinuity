@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 314" width="780" height="314" role="img" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+<title>Fallback policy-drift rate, by adapter</title>
+<desc>Shorter is better: fallback-path runs that violated when the fault-free twin did not. Bars: mean of the per-seed rate over 40 held-out seeds; whiskers: 95% bootstrap interval; in brackets: pooled counts.</desc>
+<style>svg{--surface:#fcfcfb;--ink:#1f1f1e;--ink2:#5c5c59;--grid:#e4e4e0;--mark:#2a78d6;--q0:#eef4fc;--q1:#cfe1f7;--q2:#a3c6ef;--q3:#6fa4e3;--q4:#3f82d3;--q5:#1f5fae;--on-low:#1f1f1e;--on-high:#ffffff}@media (prefers-color-scheme:dark){svg{--surface:#1a1a19;--ink:#f1f1ee;--ink2:#a8a8a3;--grid:#34342f;--mark:#3987e5;--q0:#1f2a38;--q1:#24405f;--q2:#295a8c;--q3:#2f74b8;--q4:#4a90dc;--q5:#86b8ee;--on-low:#f1f1ee;--on-high:#10100f}}.bg{fill:var(--surface)}.title{fill:var(--ink);font-size:15px;font-weight:600}.sub{fill:var(--ink2);font-size:12px}.lab{fill:var(--ink);font-size:12px}.tick{fill:var(--ink2);font-size:11px}.note{fill:var(--ink2);font-size:11px}.grid{stroke:var(--grid);stroke-width:1}.axis{stroke:var(--ink2);stroke-width:1}.mark{fill:var(--mark)}.whisker{stroke:var(--ink);stroke-width:1.5}.ring{stroke:var(--surface);stroke-width:2}.na{fill:var(--grid)}.q0{fill:var(--q0)}.q1{fill:var(--q1)}.q2{fill:var(--q2)}.q3{fill:var(--q3)}.q4{fill:var(--q4)}.q5{fill:var(--q5)}.on-low{fill:var(--on-low);font-size:12px}.on-high{fill:var(--on-high);font-size:12px}</style>
+<rect class="bg" width="780" height="314"/>
+<text class="title" x="20" y="30">Fallback policy-drift rate, by adapter</text>
+<text class="sub" x="20" y="47">Shorter is better: fallback-path runs that violated when the fault-free twin did not. Bars: mean of the per-seed rate</text>
+<text class="sub" x="20" y="64">over 40 held-out seeds; whiskers: 95% bootstrap interval; in brackets: pooled counts.</text>
+<line class="grid" x1="216.0" y1="86.0" x2="216.0" y2="222.0"/><text class="tick" x="216.0" y="237.0" text-anchor="middle">0%</text>
+<line class="grid" x1="314.5" y1="86.0" x2="314.5" y2="222.0"/><text class="tick" x="314.5" y="237.0" text-anchor="middle">10%</text>
+<line class="grid" x1="413.0" y1="86.0" x2="413.0" y2="222.0"/><text class="tick" x="413.0" y="237.0" text-anchor="middle">20%</text>
+<line class="grid" x1="511.5" y1="86.0" x2="511.5" y2="222.0"/><text class="tick" x="511.5" y="237.0" text-anchor="middle">30%</text>
+<line class="grid" x1="610.0" y1="86.0" x2="610.0" y2="222.0"/><text class="tick" x="610.0" y="237.0" text-anchor="middle">40%</text>
+<line class="axis" x1="216.0" y1="86.0" x2="216.0" y2="222.0"/>
+<text class="lab" x="206.0" y="107.0" text-anchor="end">lexical-prefix</text>
+<text class="lab" x="224.0" y="107.0">n/a (no such runs)</text>
+<text class="lab" x="206.0" y="141.0" text-anchor="end">canonicalize-then-open</text>
+<path class="mark" d="M 216.0 128.0 H 495.2 Q 499.2 128.0 499.2 132.0 V 142.0 Q 499.2 146.0 495.2 146.0 H 216.0 Z"><title>canonicalize-then-open: 28.7% [27.1%, 30.6%]; pooled 138/480</title></path>
+<line class="whisker" x1="482.8" y1="137.0" x2="517.7" y2="137.0"/><line class="whisker" x1="482.8" y1="133.0" x2="482.8" y2="141.0"/><line class="whisker" x1="517.7" y1="133.0" x2="517.7" y2="141.0"/>
+<text class="lab" x="525.7" y="141.0">28.7% (138/480)</text>
+<text class="lab" x="206.0" y="175.0" text-anchor="end">dirfd-relative</text>
+<path class="mark" d="M 216.0 162.0 H 536.2 Q 540.2 162.0 540.2 166.0 V 176.0 Q 540.2 180.0 536.2 180.0 H 216.0 Z"><title>dirfd-relative: 32.9% [30.8%, 35.2%]; pooled 158/480</title></path>
+<line class="whisker" x1="519.7" y1="171.0" x2="562.8" y2="171.0"/><line class="whisker" x1="519.7" y1="167.0" x2="519.7" y2="175.0"/><line class="whisker" x1="562.8" y1="167.0" x2="562.8" y2="175.0"/>
+<text class="lab" x="570.8" y="175.0">32.9% (158/480)</text>
+<text class="lab" x="206.0" y="209.0" text-anchor="end">strict-safe-open</text>
+<text class="lab" x="224.0" y="209.0">n/a (no such runs)</text>
+<text class="tick" x="413.0" y="254.0" text-anchor="middle">Fallback policy-drift rate</text>
+<text class="note" x="20" y="280">Fallback policy-drift rate = fallback-path runs labelled containment_violation whose fault-free twin was not / runs</text>
+<text class="note" x="20" y="295">that took the fallback path. Synthetic fixtures only.</text>
+</svg>
